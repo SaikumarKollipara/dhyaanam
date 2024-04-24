@@ -52,14 +52,21 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        "app-primary": "#ffe8e2",
-        "app-secondary": "#f3eaff",
-        "app-accent": "#0f172a;",
+        "app-primary": "#ffffff",
+        "app-secondary": {
+          DEFAULT: "#F9F1F1",
+          b: "#F1F3F9",
+        },
+        "app-accent": "#F36253",
+        "app-gray": "#f1f5f9",
+        "app-black": "#2B2B2B",
       },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "app-md": "24px",
       },
       keyframes: {
         "accordion-down": {
