@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { COURSES } from "@/constants";
+import { COURSES } from "@/constants/landing";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -11,17 +11,19 @@ export default function Home() {
       <Header />
       <section className="flex flex-col md:flex-row justify-between gap-4 h-screen md:h-[calc(100vh-6rem)] w-full">
         <div className="bg-app-secondary flex-1 flex flex-col justify-center rounded-app-md text-app-black">
-          <p className="p-8 md:p-20 text-2xl md:text-4xl md:leading-normal font-bold">
-            <div className="mb-4 text-xl font-extrabold text-app-accent">
-              <span className="font-bold">Meditate. Elevate. Radiate.</span> |
-              All for free
+          <div className="p-8 md:p-20 text-2xl md:text-4xl md:leading-normal font-bold">
+            <div className="mb-2 text-xl font-bold text-app-accent">
+              Meditate. Elevate. Radiate.
             </div>
-            <span>
-              Discover the transformative journey of meditation, where each
-              breath leads you closer to a state of profound inner balance and
-              well-being.
-            </span>
-          </p>
+            <h1>
+              Discover the power of meditation and change your life one breath
+              at a time.
+            </h1>
+            <p className="text-base font-normal mt-4 leading-relaxed">
+              Welcome to our online sanctuary, where meditation is freely
+              shared, hearts are opened, and lives are transformed.
+            </p>
+          </div>
         </div>
         <div className="flex-1 rounded-app-md overflow-hidden">
           <Image
@@ -44,6 +46,56 @@ export default function Home() {
           />
         ))}
       </section>
+      <Heading>What is our mission</Heading>
+      <section className="min-h-screen grid grid-cols-3 grid-rows-2 gap-4">
+        <div className="relative bg-app-secondary pink-dotted-background col-span-3 rounded-app-md p-10 px-20 overflow-hidden">
+          <h1 className="text-4xl leading-snug font-bold text-app-black">
+            Reach meditation to as many as possible.
+          </h1>
+          <p className="max-w-md mt-4 leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum
+            dolorem quasi quia voluptatibus maxime nostrum ipsam voluptatum
+            labore beatae suscipit!
+          </p>
+          <Image
+            className="absolute right-20 -bottom-6 h-full w-auto object-cover"
+            src="/holding-hands.png"
+            width={1000}
+            height={1000}
+            alt="Holding hands"
+          />
+        </div>
+        <div className="bg-app-secondary-c yellow-dotted-background rounded-app-md p-10">
+          <h1 className="text-4xl leading-snug font-bold text-app-black">
+            Transform lives
+          </h1>
+          <p className="max-w-sm mt-4 leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum
+            dolorem quasi quia voluptatibus maxime nostrum ipsam voluptatum
+            labore beatae suscipit!
+          </p>
+        </div>
+        <div className="bg-app-secondary-b blue-dotted-background rounded-app-md p-10">
+          <h1 className="text-4xl leading-snug font-bold text-app-black">
+            Transform lives
+          </h1>
+          <p className="max-w-sm mt-4 leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum
+            dolorem quasi quia voluptatibus maxime nostrum ipsam voluptatum
+            labore beatae suscipit!
+          </p>
+        </div>
+        <div className="bg-app-secondary-c yellow-dotted-background rounded-app-md p-10">
+          <h1 className="text-4xl leading-snug font-bold text-app-black">
+            Transform lives
+          </h1>
+          <p className="max-w-sm mt-4 leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum
+            dolorem quasi quia voluptatibus maxime nostrum ipsam voluptatum
+            labore beatae suscipit!
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
@@ -58,7 +110,7 @@ function Heading({
   return (
     <h1
       className={cn(
-        "mb-20 mt-44 text-app-black text-6xl font-black text-center",
+        "mb-24 mt-36 text-app-black text-6xl font-black text-center",
         className
       )}
     >

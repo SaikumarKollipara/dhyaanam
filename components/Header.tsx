@@ -9,7 +9,7 @@ export default function Header() {
         <p className="cursor-pointer hover:underline font-medium">Mission</p>
         <p className="cursor-pointer hover:underline font-medium">Purpose</p>
         <p className="cursor-pointer hover:underline font-medium">Articles</p>
-        <p className="cursor-pointer hover:underline font-medium">Aboutus</p>
+        <p className="cursor-pointer hover:underline font-medium">About us</p>
       </div>
     </nav>
   );

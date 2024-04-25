@@ -54,8 +54,9 @@ const config = {
         },
         "app-primary": "#ffffff",
         "app-secondary": {
-          DEFAULT: "#F9F1F1",
-          b: "#F1F3F9",
+          DEFAULT: "#FEE2E1", //pink
+          b: "#CEDEFD", //blue
+          c: "#FEF6DF", //yellow
         },
         "app-accent": "#F36253",
         "app-gray": "#f1f5f9",
