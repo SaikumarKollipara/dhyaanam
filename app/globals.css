@@ -74,3 +74,41 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom scrollbar */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+*::-webkit-scrollbar-thumb {
+  @apply bg-app-accent rounded-full;
+}
+
+.pink-dotted-background {
+  opacity: 0.8;
+  background-image: radial-gradient(
+    hsl(2, 94%, 20%) 0.5px,
+    hsl(2, 94%, 94%) 0.5px
+  );
+  background-size: 10px 10px;
+}
+
+.blue-dotted-background {
+  opacity: 0.8;
+  background-image: radial-gradient(
+    hsl(220, 92%, 10%) 0.5px,
+    hsl(220, 92%, 90%) 0.5px
+  );
+  background-size: 10px 10px;
+}
+
+.yellow-dotted-background {
+  opacity: 0.8;
+  background-image: radial-gradient(
+    hsl(45, 94%, 20%) 0.5px,
+    hsl(45, 94%, 94%) 0.5px
+  );
+  background-size: 10px 10px;
+}
