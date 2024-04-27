@@ -86,6 +86,11 @@
   @apply bg-app-accent rounded-full;
 }
 
+/* Selection color */
+*::selection {
+  @apply bg-app-accent text-white;
+}
+
 .pink-dotted-background {
   opacity: 0.8;
   background-image: radial-gradient(
