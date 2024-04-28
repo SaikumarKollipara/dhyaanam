@@ -1,5 +1,5 @@
 import ContactForm from "@/components/contact-form";
-// import Header from "@/components/header";
+import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { COURSES, MISSIONS } from "@/constants/landing";
 import { cn } from "@/lib/utils";
@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="px-4 pb-8">
-      {/* <Header /> */}
+      <Header />
       <section className="h-[calc(100vh-5rem)] lg:max-h-[800px] w-full flex flex-col md:flex-row justify-between gap-4">
         <div className="bg-app-secondary flex-1 flex flex-col justify-center rounded-app-md text-app-black px-8 py-12 lg:p-20">
           <p className="text-base md:text-lg font-bold text-app-accent mb-2">
