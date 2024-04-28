@@ -1,3 +1,4 @@
+import ContactForm from "@/components/contact-form";
 import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { COURSES, MISSIONS } from "@/constants/landing";
@@ -45,7 +46,7 @@ export default function Home() {
         ))}
       </section>
       <Heading id="mission">What is our mission</Heading>
-      <section className="h-screen lg:max-h-[800px] grid grid-cols-1 auto-rows-min md:grid-cols-3 md:grid-rows-2 gap-4">
+      <section className="min-h-[800px] grid grid-cols-1 auto-rows-min md:grid-cols-3 md:grid-rows-2 gap-4">
         {MISSIONS.map((mission, idx) => (
           <MissionCard
             key={mission.id}
@@ -58,6 +59,8 @@ export default function Home() {
           />
         ))}
       </section>
+      <Heading id="contact-us">Got something to say</Heading>
+      <ContactForm />
     </main>
   );
 }
