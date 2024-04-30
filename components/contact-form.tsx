@@ -5,12 +5,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { ContactSchema } from "@/schema";
 import { Contact } from "@/types";
-import { Form, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
+import { Form, FormField, FormItem, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
+import { sendUserMessage } from "@/actions";
+import { useToast } from "./ui/use-toast";
 
 export default function ContactForm() {
+  const { toast } = useToast();
   const form = useForm<Contact>({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
@@ -21,10 +24,19 @@ export default function ContactForm() {
     },
   });
 
-  const { control, handleSubmit } = form;
+  const {
+    control,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = form;
 
   const onSumbit: SubmitHandler<Contact> = async (data) => {
-    console.log({ data });
+    const result = await sendUserMessage(data);
+    if (!result.success)
+      return toast({ variant: "destructive", title: result.error });
+    return toast({
+      title: "Message sent successfully!",
+    });
   };
 
   return (
@@ -105,8 +117,9 @@ export default function ContactForm() {
           <Button
             className="h-full w-full bg-app-black !rounded-app-md py-6 hover:bg-app-black/90 lg:col-span-2"
             type="submit"
+            disabled={isSubmitting}
           >
-            Send Message
+            {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
       </Form>
