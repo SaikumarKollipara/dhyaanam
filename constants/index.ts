@@ -11,11 +11,7 @@ export const NAV_LINKS: {
     href: "#mission",
   },
   {
-    name: "About us",
-    href: "#about-us",
-  },
-  {
-    name: "Contact us",
+    name: "Contact",
     href: "#contact-us",
   },
 ];
