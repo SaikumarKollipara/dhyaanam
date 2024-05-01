@@ -1,11 +1,13 @@
-import { ContactSchema } from "@/schema";
+import { ContactSchema, UserDetailsSchema } from "@/schema";
 import * as z from "zod";
 
 export type Contact = z.infer<typeof ContactSchema>;
 
-interface SuccessResult {
+export type UserDetails = z.infer<typeof UserDetailsSchema>;
+
+interface SuccessResult<T> {
   success: true;
-  data: any;
+  data: T;
 }
 
 interface FailureResult {
@@ -13,4 +15,4 @@ interface FailureResult {
   error: string;
 }
 
-export type ApiResult = SuccessResult | FailureResult;
+export type ApiResult<T = any> = SuccessResult<T> | FailureResult;

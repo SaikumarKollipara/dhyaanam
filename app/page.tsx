@@ -1,9 +1,8 @@
 import ContactForm from "@/components/contact-form";
 import Header from "@/components/header";
-import { Button } from "@/components/ui/button";
+import StartProgram from "@/components/start-program";
 import { COURSES, MISSIONS } from "@/constants/landing";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -111,13 +110,7 @@ function CourseCard({
         alt="Course"
       />
       <div className="absolute left-6 bottom-8">
-        <Button
-          className="rounded-full bg-white text-black mb-3 text-xs font-semibold hover:bg-white/90 hover:text-black"
-          size="sm"
-        >
-          Start Program&nbsp;
-          <ArrowUpRight className="text-black" size={16} strokeWidth={2} />
-        </Button>
+        <StartProgram programName={title} />
         <h1 className="text-2xl text-white">{title}</h1>
       </div>
     </div>

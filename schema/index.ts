@@ -15,3 +15,8 @@ export const ContactSchema = z
     message: "Please provide either email or phone number",
     path: ["email"],
   });
+
+export const UserDetailsSchema = z.object({
+  name: z.string().min(1, { message: "Name is required" }),
+  phone: z.string().length(10, { message: "Invalid phone number" }),
+});

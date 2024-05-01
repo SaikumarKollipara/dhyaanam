@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <nav className="sticky top-0 h-16 flex gap-20 items-center bg-app-primary/80 backdrop-blur-lg z-50">
+    <nav className="w-full sticky top-0 h-16 flex gap-20 items-center bg-app-primary/80 backdrop-blur-lg z-50">
       <Link href="/" className="font-black text-xl">
         Dhyaanam.
       </Link>
