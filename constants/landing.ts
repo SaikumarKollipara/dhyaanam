@@ -25,7 +25,7 @@ export const COURSES: {
   },
   {
     id: 5,
-    title: "Kundalini Yoga",
+    title: "Progressive Relaxation",
     image: "/course5.jpg",
   },
 ];
@@ -39,31 +39,31 @@ export const MISSIONS: {
 }[] = [
   {
     id: 1,
-    title: "Reach meditation to as many as possible.",
+    title: "Create awareness to as many as possible.",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum dolorem quasi quia voluptatibus maxime nostrum ipsam voluptatum labore beatae suscipit!",
+      "Spreading awareness far and wide, our mission is to enlighten individuals about the transformative benefits of meditation, fostering a deeper understanding of its profound impact on mental, emotional, and physical well-being.",
     className: "bg-app-secondary pink-dotted-background",
     image: "/holding-hands.png",
   },
   {
     id: 2,
-    title: "Transform lives",
+    title: "Transform lives through meditation",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum dolorem quasi quia voluptatibus maxime nostrum ipsam voluptatum labore beatae suscipit!",
+      "Through the practice of meditation, we empower individuals to embark on a journey of self-discovery and inner transformation, leading to profound shifts in mindset, behavior, and overall quality of life.",
     className: "bg-app-secondary-c yellow-dotted-background",
   },
   {
     id: 3,
-    title: "Transform lives",
+    title: "Create global community of mindful citizens",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum dolorem quasi quia voluptatibus maxime nostrum ipsam voluptatum labore beatae suscipit!",
+      "Our vision extends beyond borders as we strive to unite individuals from all walks of life, forming a global community of mindful citizens dedicated to cultivating compassion, empathy, and understanding through the practice of mindfulness and meditation.",
     className: "bg-app-secondary-b blue-dotted-background",
   },
   {
     id: 4,
-    title: "Transform lives",
+    title: "Create global peace",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum dolorem quasi quia voluptatibus maxime nostrum ipsam voluptatum labore beatae suscipit!",
+      " By fostering inner peace within individuals, we believe in creating a ripple effect that extends to communities and beyond, ultimately contributing to the realization of a more peaceful and harmonious world, where understanding, tolerance, and cooperation prevail.",
     className: "bg-app-secondary-c yellow-dotted-background",
   },
 ];

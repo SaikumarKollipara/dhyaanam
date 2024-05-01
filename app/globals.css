@@ -77,13 +77,31 @@
 
 /* Custom scrollbar */
 *::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 *::-webkit-scrollbar-track {
   @apply bg-transparent;
 }
 *::-webkit-scrollbar-thumb {
   @apply bg-app-accent rounded-full;
+}
+
+/* Selection color */
+*::selection {
+  @apply bg-app-accent text-white;
+}
+
+/* To remove arrows from number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .pink-dotted-background {

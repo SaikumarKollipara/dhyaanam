@@ -1,15 +1,15 @@
-import Header from "@/components/Header";
-import { Button } from "@/components/ui/button";
+import ContactForm from "@/components/contact-form";
+import Header from "@/components/header";
+import StartProgram from "@/components/start-program";
 import { COURSES, MISSIONS } from "@/constants/landing";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="px-4 pb-8">
       <Header />
-      <section className="h-[calc(100vh-5rem)] w-full flex flex-col md:flex-row justify-between gap-4">
+      <section className="h-[calc(100vh-5rem)] lg:max-h-[800px] w-full flex flex-col md:flex-row justify-between gap-4">
         <div className="bg-app-secondary flex-1 flex flex-col justify-center rounded-app-md text-app-black px-8 py-12 lg:p-20">
           <p className="text-base md:text-lg font-bold text-app-accent mb-2">
             Meditate. Elevate. Radiate.
@@ -33,7 +33,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <Heading>What are we teaching</Heading>
+      <Heading id="courses">What are we teaching</Heading>
       <section className="grid auto-rows-[310px] grid-cols-1 lg:grid-cols-3 gap-4">
         {COURSES.map((course, idx) => (
           <CourseCard
@@ -44,34 +44,40 @@ export default function Home() {
           />
         ))}
       </section>
-      <Heading>What is our mission</Heading>
-      <section className="min-h-screen grid grid-cols-1 auto-rows-min md:grid-cols-3 md:grid-rows-2 gap-4">
+      <Heading id="mission">What is our mission</Heading>
+      <section className="min-h-[800px] grid grid-cols-1 auto-rows-min md:grid-cols-3 md:grid-rows-2 gap-4">
         {MISSIONS.map((mission, idx) => (
           <MissionCard
             key={mission.id}
             title={mission.title}
             description={mission.description}
+            image={mission.image}
             className={cn(mission.className, {
               "md:col-span-3": idx === 0,
             })}
           />
         ))}
       </section>
+      <Heading id="contact-us">Got something to say</Heading>
+      <ContactForm />
     </main>
   );
 }
 
 function Heading({
+  id,
   className,
   children,
 }: {
+  id?: string;
   className?: string;
   children: React.ReactNode;
 }) {
   return (
     <h1
+      id={id}
       className={cn(
-        "text-app-black text-5xl font-black leading-snug text-center my-24 ",
+        "text-app-black text-5xl md:text-6xl font-black leading-snug text-center py-20 mt-24",
         className
       )}
     >
@@ -104,13 +110,7 @@ function CourseCard({
         alt="Course"
       />
       <div className="absolute left-6 bottom-8">
-        <Button
-          className="rounded-full bg-white text-black mb-3 text-xs font-semibold hover:bg-white/90 hover:text-black"
-          size="sm"
-        >
-          Start Program&nbsp;
-          <ArrowUpRight className="text-black" size={16} strokeWidth={2} />
-        </Button>
+        <StartProgram programName={title} />
         <h1 className="text-2xl text-white">{title}</h1>
       </div>
     </div>
@@ -138,7 +138,7 @@ function MissionCard({
       <p className="max-w-md mt-4 leading-relaxed">{description}</p>
       {image && (
         <Image
-          className="absolute right-20 -bottom-6 h-full w-auto object-cover"
+          className="hidden md:block absolute right-20 -bottom-10 h-auto w-80 object-cover"
           src={image}
           width={1000}
           height={1000}
