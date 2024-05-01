@@ -7,7 +7,7 @@ export async function sendUserMessage(data: Contact): Promise<ApiResult> {
   const { name, email, phone, message } = data;
   try {
     const result = await sendEmail(
-      "kkrksaikumar@gmail.com",
+      "kkumari1970@gmail.com",
       "Dhyaanam: Message from a user",
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`
     );
@@ -24,7 +24,7 @@ export async function sendInterestedProgram(
   const { name, phone } = user;
   try {
     const result = await sendEmail(
-      "kkrksaikumar@gmail.com",
+      "kkumari1970@gmail.com",
       "Dhyaanam: User is interested in a program",
       `Name: ${name}\nPhone: ${phone}\nProgram: ${program}`
     );
