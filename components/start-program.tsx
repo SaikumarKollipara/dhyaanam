@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import { Button } from "./ui/button";
@@ -28,15 +28,13 @@ interface Props {
 
 export default function StartProgram({ programName }: Props) {
   const [open, setOpen] = useState(false);
-
-  const userDetails = JSON.parse(
-    localStorage.getItem("userDetails") || "{}"
-  ) as UserDetails;
+  const [storedUserDetails, setStoredUserDetails] =
+    useState<UserDetails | null>(null);
 
   const form = useForm<UserDetails>({
     defaultValues: {
-      name: userDetails.name || "",
-      phone: userDetails.phone || "",
+      name: (storedUserDetails && storedUserDetails.name) || "",
+      phone: (storedUserDetails && storedUserDetails.phone) || "",
     },
     resolver: zodResolver(UserDetailsSchema),
   });
@@ -58,6 +56,13 @@ export default function StartProgram({ programName }: Props) {
     setOpen(false);
     localStorage.setItem("userDetails", JSON.stringify(getValues()));
   };
+
+  useEffect(() => {
+    const userDetails = JSON.parse(
+      localStorage.getItem("userDetails") || "{}"
+    ) as UserDetails;
+    setStoredUserDetails(userDetails);
+  }, []);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
